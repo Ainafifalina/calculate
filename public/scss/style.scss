@@ -1,2 +1,59 @@
 @import '_reset.scss';
+@import '_variable.scss';
 @import '_global.scss';
+@import '_extends.scss';
+
+.container{
+    margin-top:150px;
+    margin-bottom:10px;
+    & .calculator-block{
+        background:$color-bg;
+        border-radius:5px;
+        border-top:2px solid $primary;
+        padding:10px; 
+        width:350px;
+        & .content-calculator{
+            & .calculator-title{
+                padding-bottom:10px;
+                font-size:2em;
+            }
+            & .calculator-header{
+                & form input{
+                    @extend %input-calculator;
+                    margin-right:5px;
+                    width:81%;
+                }
+                & form button{
+                    @extend %btn-calculator;
+                }
+            }
+            & .calculator-body{
+                margin-top:25px;
+                & .calculator-item {
+                    & button{
+                        @extend %btn-calculator;
+                        margin-bottom:10px;
+                        width:50px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:360px)
+{
+    .container{
+        margin-top:60px;
+        & .calculator-block{
+            width:280px;
+            & .content-calculator{
+                & .calculator-header{
+                    & form input {
+                        width:65%;
+                    }
+                }
+            }
+        }
+    }
+}

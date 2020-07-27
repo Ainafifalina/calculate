@@ -1,0 +1,134 @@
+/*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
+html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+ul {
+  list-style: none;
+}
+
+button, input, select, textarea {
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+img, video {
+  height: auto;
+  max-width: 100%;
+}
+
+iframe {
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td, th {
+  padding: 0;
+}
+
+td:not([align]), th:not([align]) {
+  text-align: left;
+}
+
+html, body {
+  font-size: 14px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  line-height: 1.6;
+  width: 100%;
+  overflow-x: hidden;
+  background: black;
+  color: white;
+}
+
+p {
+  word-wrap: break-word;
+}
+
+.hand {
+  cursor: pointer;
+}
+
+.danger {
+  color: red;
+}
+
+.primary {
+  color: cyan;
+}
+
+.container .calculator-block .content-calculator .calculator-body .calculator-item button, .container .calculator-block .content-calculator .calculator-header form button {
+  color: white;
+  border: 1px solid #2d89ef;
+  padding: 15px;
+  border-radius: 0 !important;
+  transition: 0.3s;
+}
+.container .calculator-block .content-calculator .calculator-body .calculator-item button:hover, .container .calculator-block .content-calculator .calculator-header form button:hover {
+  color: #2d89ef;
+}
+
+.container .calculator-block .content-calculator .calculator-header form input {
+  color: #2d89ef;
+  border: 1px solid #2d89ef;
+  padding: 15px;
+  border-radius: 0 !important;
+  background: none;
+}
+
+.container {
+  margin-top: 150px;
+  margin-bottom: 10px;
+}
+.container .calculator-block {
+  background: #232325;
+  border-radius: 5px;
+  border-top: 2px solid #2d89ef;
+  padding: 10px;
+  width: 350px;
+}
+.container .calculator-block .content-calculator .calculator-title {
+  padding-bottom: 10px;
+  font-size: 2em;
+}
+.container .calculator-block .content-calculator .calculator-header form input {
+  margin-right: 5px;
+  width: 81%;
+}
+.container .calculator-block .content-calculator .calculator-body {
+  margin-top: 25px;
+}
+.container .calculator-block .content-calculator .calculator-body .calculator-item button {
+  margin-bottom: 10px;
+  width: 50px;
+}
+
+@media (max-width: 360px) {
+  .container {
+    margin-top: 60px;
+  }
+  .container .calculator-block {
+    width: 280px;
+  }
+  .container .calculator-block .content-calculator .calculator-header form input {
+    width: 65%;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
