@@ -1,7 +1,8 @@
 $(document).ready(function(){
-    
+    /**Declaration du champs de l'operation */    
     const input = $('.form-calculator-js input');
 
+    /**Permettre de faire le disable du champs de l'operation */
     const disabled_input =  function(){
         //document.oncontextmenu = new Function("return false");
         input.attr('disabled',true);
@@ -11,7 +12,11 @@ $(document).ready(function(){
     }
     disabled_input();
 
-    const add_number = function(){
+    /**Permettre de faire le calcul dans la calculatrice */
+    const calculator = function(){
+        /**
+         * Permettre de declarer les buttons nombres, opérateur,le resultat et le stockage de calcul
+         */
         const buttonStr = '.calculator-body-js .number-item-js button';
         const operator = '.calculator-body-js .operator-item-js button.operator-js';
         const result = '.calculator-body-js .operator-item-js button.result-js';
@@ -21,6 +26,12 @@ $(document).ready(function(){
             operator: ''
         };
 
+        /**Permettre d'afficher sur le champs le nombre cliqué 
+         * S'il existe déjà une virgule , on obtiendra plus une virgule
+         * Si on clique en premier le virgule, on obtiendra une 0.
+         * Si on est déjà choisi une opérateur, on attribue la valeur sur le champ comme le second nombre sur l'opération
+         * 
+        */
         function number_in_field(){
             let number = $(this).text();
             let input_value = input.val();
@@ -44,6 +55,12 @@ $(document).ready(function(){
             }
         }
 
+        /**
+         * On déclare l'opérateur et recuperer la valeur sur le champs
+         * si on clique sur une opérateur la premiere fois et on ne donne pas la premiere chiffre, on attribue 0 la première chiffre
+         * Si l'opérateur est % , on donne immédiatement le résultat sur le champs
+         * Si l'opérateur est - et on n'a pas encore saisir une chiffre, le chiffre est négatif
+         */
         function select_operator(){
             const operator = $(this).text();
             let input_value = input.val();
@@ -73,15 +90,15 @@ $(document).ready(function(){
             }
         }
 
-        function result_calcul()
+        /**
+         * Permettre de faire le calcul entre le premier chiffre et le second chiffre
+         */
+        function result_calcul(e)
         {
+            e.preventDefault();
             const firstNumber = parseFloat(calcul.firstNumber == '-' ? -1 : calcul.firstNumber);
             const secondNumber = parseFloat(calcul.secondNumber == '-' ? -1 : calcul.secondNumber);
             const operator = calcul.operator;
-
-            calcul.firstNumber = 0;
-            calcul.secondNumber = 0;
-            calcul.operator = '';
 
             switch(operator){
                 case '+':
@@ -105,13 +122,13 @@ $(document).ready(function(){
             }
         }
 
+        /**Permettre de faire le cancel sur le champs */
         function cancel(){
             input.val('');
-            calcul.firstNumber = 0;
-            calcul.secondNumber = 0;
-            calcul.operator = '';
+            reset_calcul();
         }
         
+        /**Permettre de supprimer le chiffre sur le champs un par un */
         function delete_number(){
             let input_value = input.val();
             let input_length = input_value.length;
@@ -121,11 +138,19 @@ $(document).ready(function(){
             } 
         }
 
+        /** Permettre de faire le reset sur le calcul */
+        function reset_calcul(){
+            calcul.firstNumber = 0;
+            calcul.secondNumber = 0;
+            calcul.operator = '';
+        }
+
         $(document).on('click', buttonStr, number_in_field);
         $(document).on('click', operator, select_operator);
         $(document).on('click', result, result_calcul);
+        $(document).on('submit','.form-calculator-js',result_calcul);
         $(document).on('click','.delete-number-js',delete_number);
         $(document).on('click','.cancel-calculate-js',cancel);
     }
-    add_number();
+    calculator();
 });
