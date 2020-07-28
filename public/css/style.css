@@ -73,14 +73,14 @@ p {
   color: cyan;
 }
 
-.container .calculator-block .content-calculator .calculator-body .calculator-item button, .container .calculator-block .content-calculator .calculator-header form button {
+.container .calculator-block .content-calculator .calculator-body .calculator-btn-list .calculator-item button, .container .calculator-block .content-calculator .calculator-header form button {
   color: white;
   border: 1px solid #2d89ef;
   padding: 15px;
   border-radius: 0 !important;
   transition: 0.3s;
 }
-.container .calculator-block .content-calculator .calculator-body .calculator-item button:hover, .container .calculator-block .content-calculator .calculator-header form button:hover {
+.container .calculator-block .content-calculator .calculator-body .calculator-btn-list .calculator-item button:hover, .container .calculator-block .content-calculator .calculator-header form button:hover {
   color: #2d89ef;
 }
 
@@ -114,7 +114,12 @@ p {
 .container .calculator-block .content-calculator .calculator-body {
   margin-top: 25px;
 }
-.container .calculator-block .content-calculator .calculator-body .calculator-item button {
+.container .calculator-block .content-calculator .calculator-body .calculator-btn-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.container .calculator-block .content-calculator .calculator-body .calculator-btn-list .calculator-item button {
   margin-bottom: 10px;
   width: 50px;
 }

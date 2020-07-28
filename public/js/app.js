@@ -43,6 +43,7 @@ $(document).ready(function(){
                 calcul.secondNumber = input_value;
             }
         }
+
         function select_operator(){
             const operator = $(this).text();
             let input_value = input.val();
@@ -71,6 +72,7 @@ $(document).ready(function(){
                 }
             }
         }
+
         function result_calcul()
         {
             const firstNumber = parseFloat(calcul.firstNumber == '-' ? -1 : calcul.firstNumber);
@@ -103,9 +105,27 @@ $(document).ready(function(){
             }
         }
 
+        function cancel(){
+            input.val('');
+            calcul.firstNumber = 0;
+            calcul.secondNumber = 0;
+            calcul.operator = '';
+        }
+        
+        function delete_number(){
+            let input_value = input.val();
+            let input_length = input_value.length;
+            if(input_length > 0)
+            {
+                input.val(input_value.slice(0,(input_length - 1)));
+            } 
+        }
+
         $(document).on('click', buttonStr, number_in_field);
         $(document).on('click', operator, select_operator);
         $(document).on('click', result, result_calcul);
+        $(document).on('click','.delete-number-js',delete_number);
+        $(document).on('click','.cancel-calculate-js',cancel);
     }
     add_number();
 });

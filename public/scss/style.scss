@@ -29,11 +29,16 @@
             }
             & .calculator-body{
                 margin-top:25px;
-                & .calculator-item {
-                    & button{
-                        @extend %btn-calculator;
-                        margin-bottom:10px;
-                        width:50px;
+                & .calculator-btn-list{
+                    display:flex;
+                    flex-direction:row;
+                    justify-content:space-between;
+                    & .calculator-item {
+                        & button{
+                            @extend %btn-calculator;
+                            margin-bottom:10px;
+                            width:50px;
+                        }
                     }
                 }
             }

@@ -26,27 +26,35 @@
                         <button type="submit" class="btn"><i class="fas fa-arrow-right"></i></button>
                     </form>
                 </div>
-                <div class="calculator-body calculator-body-js d-flex flex-row justify-content-between">
-                    <div class="calculator-item number-item-js">
-                        <button class="btn">9</button>
-                        <button class="btn">8</button>
-                        <button class="btn">7</button>
-                        <button class="btn">6</button>
-                        <button class="btn">5</button>
-                        <button class="btn">4</button>
-                        <button class="btn">3</button>
-                        <button class="btn">2</button>
-                        <button class="btn">1</button>
-                        <button class="btn">0</button>
-                        <button class="btn">.</button>
+                <div class="calculator-body calculator-body-js d-flex flex-column">
+                    <div class="calculator-btn-list">
+                        <div class="calculator-item">
+                            <button class="btn delete-number-js"><i class="fas fa-arrow-left"></i></button>
+                            <button class="btn cancel-calculate-js">Off</button>
+                        </div>
                     </div>
-                    <div class="calculator-item operator-item-js">
-                        <button class="btn operator-js">/</button>
-                        <button class="btn operator-js">+</button>
-                        <button class="btn operator-js">-</button>
-                        <button class="btn operator-js">*</button>
-                        <button class="btn operator-js">%</button>
-                        <button class="btn result-js">=</button>
+                    <div class="calculator-btn-list">
+                        <div class="calculator-item number-item-js">
+                            <button class="btn">9</button>
+                            <button class="btn">8</button>
+                            <button class="btn">7</button>
+                            <button class="btn">6</button>
+                            <button class="btn">5</button>
+                            <button class="btn">4</button>
+                            <button class="btn">3</button>
+                            <button class="btn">2</button>
+                            <button class="btn">1</button>
+                            <button class="btn">0</button>
+                            <button class="btn">.</button>
+                        </div>
+                        <div class="calculator-item operator-item-js">
+                            <button class="btn operator-js">/</button>
+                            <button class="btn operator-js">+</button>
+                            <button class="btn operator-js">-</button>
+                            <button class="btn operator-js">*</button>
+                            <button class="btn operator-js">%</button>
+                            <button class="btn result-js">=</button>
+                        </div>
                     </div>
                 </div>
             </div>
